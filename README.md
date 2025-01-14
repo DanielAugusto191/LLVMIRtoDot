@@ -1,13 +1,13 @@
 # IRtoDOT
-This project was created as an introductory project to LLVM IR when I joined CompilerLab. Its a parser that takes an LLVM IR file as input and generates a corresponding DOT file, enabling visualization of the intermediate representation as a graph.
+This project was created as an introductory project to LLVM IR when I joined CompilerLab. It's an out-of-tree parser that takes an LLVM IR file as input and generates a corresponding DOT file, enabling visualization of the intermediate representation as a graph.
 
 ### Example
 
-Using [](main.ll) IR showed below, we have this control-flow PDF from my pass:
+Using the IR shown below, we generate this control-flow PDF from my pass::
 
 ![image](https://github.com/user-attachments/assets/fb6a0934-cdd5-4243-86dd-27932e0d2f2a)
 
-and from dot-cfg common pass to generate dot files:
+and using dot-cfg common pass to generate dot files:
 
 ![image](https://github.com/user-attachments/assets/7949e900-411f-44d5-bb92-d2236b0522d9)
 
