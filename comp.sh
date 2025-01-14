@@ -2,6 +2,6 @@
 cmake -G=Ninja -B ./build .
 ninja -C ./build
 opt -S -passes=toDot -load-pass-plugin=./build/libtoDot.so $1 -o $1.ll
-# dot -Tpdf main.dot -o main.pdf
-echo "DONE"
+dot -Tpdf main.dot -o main.pdf
+echo "main.pdf DONE!"
 

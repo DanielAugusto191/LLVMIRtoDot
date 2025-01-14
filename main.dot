@@ -1,0 +1,30 @@
+digraph "CFG for 'main' function" {
+	label="CFG for main function";
+
+	Node658797569 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{entry:\l   %retval = alloca i32, align 4\l   %a = alloca i32, align 4\l   %b = alloca i32, align 4\l   %i = alloca i32, align 4\l   %i5 = alloca i32, align 4\l   store i32 0, ptr %retval, align 4\l   %call = call i32 (ptr, ...) @__isoc99_scanf(ptr noundef @.str, ptr noundef %a)\l   store i32 5, ptr %b, align 4\l   %0 = load i32, ptr %a, align 4\l   %cmp = icmp sgt i32 %0, 50\l   br i1 %cmp, label %if.then, label %if.else\l|{<s0>T|<s1>F}}"];
+	Node658797569:s0 -> Node663772476;
+	Node658797569:s1 -> Node498951276;
+	Node663772476 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{if.then:\l   store i32 0, ptr %i, align 4\l   br label %for.cond\l}"];
+	Node663772476 -> Node724354492;
+	Node724354492 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{for.cond:\l   %1 = load i32, ptr %i, align 4\l   %2 = load i32, ptr %a, align 4\l   %3 = load i32, ptr %a, align 4\l   %mul = mul nsw i32 %2, %3\l   %cmp1 = icmp slt i32 %1, %mul\l   br i1 %cmp1, label %for.body, label %for.end\l|{<s0>T|<s1>F}}"];
+	Node724354492:s0 -> Node66675192;
+	Node724354492:s1 -> Node472076034;
+	Node66675192 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{for.body:\l   %4 = load i32, ptr %i, align 4\l   %5 = load i32, ptr %b, align 4\l   %mul2 = mul nsw i32 %5, %4\l   store i32 %mul2, ptr %b, align 4\l   br label %for.inc\l}"];
+	Node66675192 -> Node578307486;
+	Node578307486 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{for.inc:\l   %6 = load i32, ptr %i, align 4\l   %inc = add nsw i32 %6, 1\l   store i32 %inc, ptr %i, align 4\l   br label %for.cond, !llvm.loop !6\l}"];
+	Node578307486 -> Node724354492;
+	Node472076034 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{for.end:\l   %7 = load i32, ptr %b, align 4\l   %call3 = call i32 (ptr, ...) @printf(ptr noundef @.str.1, i32 noundef %7)\l   br label %if.end\l}"];
+	Node472076034 -> Node890681041;
+	Node498951276 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{if.else:\l   %call4 = call i32 (ptr, ...) @__isoc99_scanf(ptr noundef @.str, ptr noundef %a)\l   store i32 0, ptr %i5, align 4\l   br label %for.cond6\l}"];
+	Node498951276 -> Node240350323;
+	Node240350323 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{for.cond6:\l   %8 = load i32, ptr %i5, align 4\l   %9 = load i32, ptr %a, align 4\l   %10 = load i32, ptr %a, align 4\l   %mul7 = mul nsw i32 %9, %10\l   %11 = load i32, ptr %a, align 4\l   %mul8 = mul nsw i32 %mul7, %11\l   %cmp9 = icmp slt i32 %8, %mul8\l   br i1 %cmp9, label %for.body10, label %for.end14\l|{<s0>T|<s1>F}}"];
+	Node240350323:s0 -> Node110658144;
+	Node240350323:s1 -> Node757669391;
+	Node110658144 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{for.body10:\l   %12 = load i32, ptr %i5, align 4\l   %13 = load i32, ptr %b, align 4\l   %mul11 = mul nsw i32 %13, %12\l   store i32 %mul11, ptr %b, align 4\l   br label %for.inc12\l}"];
+	Node110658144 -> Node161307307;
+	Node161307307 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{for.inc12:\l   %14 = load i32, ptr %i5, align 4\l   %inc13 = add nsw i32 %14, 1\l   store i32 %inc13, ptr %i5, align 4\l   br label %for.cond6, !llvm.loop !8\l}"];
+	Node161307307 -> Node240350323;
+	Node757669391 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{for.end14:\l   %15 = load i32, ptr %b, align 4\l   %call15 = call i32 (ptr, ...) @printf(ptr noundef @.str.1, i32 noundef %15)\l   br label %if.end\l}"];
+	Node757669391 -> Node890681041;
+	Node890681041 [shape=record, color="#000000", style=filled, fillcolor="#cbddfb", label="{if.end:\l   %16 = load i32, ptr %retval, align 4\l   ret i32 %16\l}"];
+	}
